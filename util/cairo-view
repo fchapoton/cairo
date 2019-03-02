@@ -6,8 +6,8 @@ import pygtk
 pygtk.require('2.0')
 import gtk
 import gtk.gdk
-import pango
 import gobject
+
 
 class CairoView(gtk.Window):
     def __init__(self, family="", slant=0, weight=0, size=18, text="The Quick Brown Fox Jumps Over The Lazy Dog!"):
@@ -104,7 +104,7 @@ gobject.type_register(CairoView)
 def main(args):
 
     if len (args) == 1:
-	print "usage: cairo-view family [slant [weight [size [text]]]]"
+	print("usage: cairo-view family [slant [weight [size [text]]]]")
 	sys.exit (1)
     cv= CairoView (*args[1:])
     cv.run()
